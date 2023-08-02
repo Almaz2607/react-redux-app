@@ -8,6 +8,7 @@ import {
   getTasks,
   loadTasks,
   getTasksLoadingStatus,
+  createTask,
 } from "./store/task";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { getError } from "./store/errors";
@@ -43,6 +44,7 @@ const App = (params) => {
   return (
     <>
       <h1>APP</h1>
+      <button onClick={() => dispatch(createTask())}>Create Task</button>
       <ul>
         {state.map((el) => (
           <li key={el.id}>
